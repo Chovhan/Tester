@@ -5,7 +5,7 @@ pipeline{
         gradle 'GRADLE_HOME'
     }
 
-   // stages{
+   stages{
      //   stage("build"){
        //     steps{
                 //bat 'gradle build'
