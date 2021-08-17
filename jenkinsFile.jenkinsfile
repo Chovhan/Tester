@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    environment {
+        SERVER_CREDENTIALS = credentials('server-redentials')
+    }
+    stages{
+        stage("build"){
+            steps{
+                script {
+                    bat "gradle build"
+                }
+            }
+        }
+        stage("test") {
+            steps{
+                script {
+                    bat "gradle execTest"
+                }
+            }
+        }
+    }
+}
