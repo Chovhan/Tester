@@ -1,21 +1,22 @@
 pipeline{
     agent any
-    environment {
-        SERVER_CREDENTIALS = credentials('server-redentials')
+
+    tools {
+        gradle 'GRADLE_HOME'
     }
+
     stages{
         stage("build"){
             steps{
-                script {
-                    bat "gradle build"
-                }
+                sh 'gradle build'
+                //script {
+                  //  bat "gradle build"
+                //}
             }
         }
         stage("test") {
             steps{
-                script {
-                    bat "gradle execTest"
-                }
+                sh 'gradle execTest'
             }
         }
     }
