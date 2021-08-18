@@ -5,15 +5,15 @@ pipeline{
         gradle 'GRADLE_HOME'
     }
 
-   stages{
-     //   stage("build"){
-       //     steps{
-                //bat 'gradle build'
+    stages{
+        stage("build"){
+            steps{
+                bat 'gradle build'
                 //script {
                   //  bat "gradle build"
                 //}
-         //   }
-        //}
+            }
+        }
         stage("test") {
             steps{
                 bat 'gradle execTest'
